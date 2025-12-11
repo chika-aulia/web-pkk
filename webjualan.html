@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Banana Roll</title>
+  <style>
+    body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #6d0101;
+  padding: 20px;
+}
+
+header {
+  background-color: #d43418;
+  display: flex;
+  flex-direction: space;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  gap: 10px;
+}
+
+header img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ece1e1;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #0c0b0b;
+}
+
+.popo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 150px;
+  border: 3px dashed #8b1515;
+  border-radius: 10px;
+  margin-top: 20px;
+  background-color: white;
+  animation: blink 1s infinite;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+@keyframes blink {
+  0% { color: #541901; }
+  50% { color: #ad6d05; }
+  100% { color: #432a02; }
+}
+
+.popo h1,
+.popo h2 {
+  animation: blink 5s infinite;
+  margin: 5px 0;
+}
+
+.product-section {
+  margin-top: 30px;
+  color: white; /* warna tulisan jadi putih */
+}
+
+
+.product-description {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  border: 3px dashed #ae4b0d;
+  background-color: white;
+  border-radius: 5px;
+  animation: blink 5s infinite;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.product-description img {
+  max-width: 100%;
+  width: 600px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex: 1;
+}
+
+.product-description h4 {
+  flex: 2;
+  color: #ad5905;
+  font-size: 1rem;
+}
+
+.flavor-section {
+  margin-top: 40px;
+}
+
+.flavor-section h3 {
+  color: white;
+  margin-bottom: 15px;
+}
+
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background-color: white;
+  border: 2px solid #761403;
+  border-radius: 10px;
+  padding: 15px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  text-align: center;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card h4 {
+  margin: 10px 0 5px;
+  color: #6c1105;
+}
+
+.card p {
+  margin: 0 0 10px;
+  color: #6c2a09;
+  font-weight: bold;
+}
+
+.card button {
+  background-color: #870606;
+  color: white;     /* Warna teks tombol */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+.card button:hover {
+  background-color: #890505b9;
+}
+
+.cart {
+  margin-top: 30px;
+  padding: 15px;
+  border: 2px dashed #f9f9f9;
+  border-radius: 10px;
+  background-color: #fffef5;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.cart h2 {
+  margin-top: 0;
+}
+
+
+
+.container-button {
+  margin-top: 8px;
+}
+
+.container-button button {
+  background-color: #c8490a;#cart-items > div {
+  border: 2px solid #772c04;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: rgb(104, 14, 14);
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  color: white; /* warna teks jadi putih */
+}
+
+  border: none;
+  padding: 6px 10px;
+  margin: 0 4px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.container-button button:hover {
+  background-color: #872808;
+}
+
+
+footer {
+  background-color: #81350c;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  border-top: 2px solid #732708;
+  border-bottom: 2px solid #875306;
+  padding: 1rem 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.follow-left {
+  text-align: left;
+}
+
+.contact-right {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact-right a {
+  text-decoration: none;
+  color: #f1f1f1;
+}
+
+.contact-right p {
+  color: white;
+}
+
+.contact-right a:hover {
+  color: #1d58d7;
+}
+
+.follow-us {
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.social-icons a img {
+  width: 30px;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .follow-left,
+  .contact-right {
+    text-align: center;
+    align-items: center;
+  }
+
+  .contact-right {
+    display: flex;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https:Logo.jpg" alt="Logo toko Banana Roll berbentuk bulat kuning" />
+    <nav>
+      <ul>
+        <li><a href="#" class="active">Beranda</a></li>
+        <li><a href="#produk">Produk</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="popo">
+    <h1>SELAMAT DATANG DI TOKO KAMI</h1>
+    <h2>Rasakan nikmatnya cimin dalam setiap gigitan</h2>
+  </div>
+
+  <div class="product-section" id="produk">
+    <h3>Deskripsi Produk yang Kami Jual</h3>
+    <div class="product-description">
+      <img src="https://img-global.cpcdn.com/recipes/e7fca509c71f5614/1200x630cq80/photo.jpg"" alt="Gambar Banana Roll camilan pisang" />
+      <h4>
+       CiminFoods adalah tempatnya cimin kenyal, pedas, dan super nagih! Dibuat fresh setiap hari dengan pilihan rasa yang seru, CiminFoods siap nemenin kamu ngemil kapan aja. Mau yang pedas, baldo, atau jagung? Semua ada dan dijamin ngangenin!
+      </h4>
+    </div>
+  </div>
+
+  <div class="flavor-section">
+    <h3>Pilih rasa yang Anda inginkan</h3>
+    <div class="card-container" id="productCards"></div>
+
+    <div class="cart">
+      <h2>Keranjang Belanja</h2>
+      <div id="cart-items">
+        <p>Keranjang kosong</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+  <div class="footer-content">
+
+    <div class="footer-section follow-left">
+      <div class="follow-us">Ikuti Kami</div>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/ciminfoods?igsh=MWt2OGR5MWt1bHV5Nw==" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" /></a>
+        <a href="https://www.facebook.com/share/1G5u5hTkEe/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174848.png" alt="Facebook" /></a>
+        <a href="https://www.tiktok.com/@ciminfoods5?_r=1&_t=ZS-927gqktNY2B" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046124.png" alt="TikTok" /></a>
+        <a href="https://youtube.com/@ciminfoods?si=BAY0w1SxskuHoZdp" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174883.png" alt="YouTube" /></a>
+      </div>
+    </div>
+
+    <div class="footer-section contact-right" id="kontak">
+      <div class="follow-us">Kontak</div>
+      <p>WA: <a href="https://wa.me/6282311832661">0823-1183-2661</a></p>
+      <p>Alamat: <a href="https://maps.app.goo.gl/twW5qtWDdLybaEz86">perumahan garden city sadjati 3, pangulah utara, Kotabaru, Karawang, Jawa Barat 41374</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+let product = [
+  { id: 1, name: "Cimin food balado", price: 6000, image: "https://img-global.cpcdn.com/recipes/e7fca509c71f5614/1200x630cq80/photo.jpg" },
+  { id: 2, name: "Cimin food pedas", price: 6000, image: "https://image.idntimes.com/post/20200510/cimin-0dc1a6b79c9310631e3a4def25ad5012.jpg" },
+  { id: 3, name: "Cimin food jagung", price: 6000, image: "https://img-global.cpcdn.com/recipes/118b8046b10f157a/680x781f0.5_0.5712_1.0q80/cimin-foto-resep-utama.jpg" }
+];
+
+const container = document.getElementById("productCards");
+
+product.forEach((produk) => {
+  const card = document.createElement("div");
+  card.className = "card";
+  card.innerHTML = `
+    <img src="${produk.image}" alt="${produk.name}" />
+    <h4>${produk.name}</h4>
+    <p>Rp. ${produk.price.toLocaleString()}</p>
+    <button onclick="tambahKeranjang(${produk.id})">Tambah ke Keranjang</button>
+  `;
+  container.appendChild(card);
+});
+
+let cart = [];
+
+function tambahKeranjang(id) {
+  let produk_yang_dipilih = product.find(item => item.id === id);
+  let produk_di_keranjang = cart.find(item => item.id === id);
+
+  if (produk_di_keranjang) {
+    produk_di_keranjang.qty += 1;
+  } else {
+    let produk_ke_keranjang = {
+      id: produk_yang_dipilih.id,
+      name: produk_yang_dipilih.name,
+      price: produk_yang_dipilih.price,
+      qty: 1
+    };
+    cart.push(produk_ke_keranjang);
+  }
+
+  updateCart();
+}
+
+function tambahQty(id) {
+  let produk_yang_dipilih = cart.find(data => data.id === id);
+  if (produk_yang_dipilih) {
+    if (produk_yang_dipilih.qty < 10) {
+      produk_yang_dipilih.qty += 1;
+    } else {
+      alert("Anda sudah mencapai batas pembelian");
+    }
+  }
+  updateCart();
+}
+
+
+
+function kurangiQty(id) {
+  let produk_yang_dipilih = cart.find(data => data.id === id);
+  if (produk_yang_dipilih) {
+    produk_yang_dipilih.qty -= 1;
+    if (produk_yang_dipilih.qty === 0) {
+      cart = cart.filter(item => item.id !== id);
+    }
+  }
+  updateCart();
+}
+
+function updateCart() {
+  const cartItems = document.getElementById("cart-items");
+  cartItems.innerHTML = "";
+
+  if (cart.length === 0) {
+    cartItems.innerHTML = "<p>Keranjang kosong</p>";
+    return;
+  }
+
+  cart
+    .filter(item => item.qty > 0)
+    .forEach(item => {
+      const div = document.createElement("div");
+      div.innerHTML = `
+        <h4>${item.name}</h4>
+        <p>${item.price.toLocaleString()} x ${item.qty}</p>
+        <p>Total: Rp. ${(item.price * item.qty).toLocaleString()}</p>
+        <div class="container-button">
+          <button onclick="tambahQty(${item.id})">+</button>
+          <button onclick="kurangiQty(${item.id})">-</button>
+        </div>
+      `;
+      cartItems.append(div);
+    });
+
+  const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+  const totalElement = document.createElement("div");
+  totalElement.style.marginTop = "20px";
+  totalElement.style.fontWeight = "bold";
+  totalElement.innerHTML = `Total Pesanan: Rp. ${total.toLocaleString()}`;
+  cartItems.append(totalElement);
+
+  const buttonCheckout = document.createElement("button");
+  buttonCheckout.innerText = "Checkout Via Whatsapp";
+  buttonCheckout.onclick = checkoutToWhatsapp;
+  cartItems.append(buttonCheckout);
+}
+
+function checkoutToWhatsapp() {
+  if (!cart || cart.length === 0) {
+    alert("Silahkan Pilih Terlebih Dahulu");
+    return;
+  }
+
+  let pesan = "Halo kak, saya mau beli\n";
+  let total = 0;
+
+  cart.forEach((produk, index) => {
+    let subtotal = produk.qty * produk.price;
+    total += subtotal;
+    pesan += `${index + 1}. ${produk.name} x ${produk.qty} = Rp. ${subtotal.toLocaleString()}\n`;
+  });
+
+  pesan += `\nTotal Pesanan: Rp. ${total.toLocaleString()}`;
+
+  const encodedMessage = encodeURIComponent(pesan);
+  window.open(`https://wa.me/6282311832661?text=${encodedMessage}`);
+}
+</script>
+</body>
+</html>
